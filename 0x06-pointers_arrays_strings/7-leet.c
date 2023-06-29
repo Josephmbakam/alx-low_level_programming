@@ -5,19 +5,20 @@
 *Return:returns encoded string
 */
 
-char *leet(char *str)
+char *leet(char *s)
 {
-	int index1 = 0, index2;
-	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
-
-	while (str[++index1])
+	int i, j;
+	char letters[] = "aAeEoOtTlL";
+	char numbers[] = "4433007711";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (index2 = 0; index2 <= 7; index2++)
+		for (j = 0; letters[j] != '\0'; j++)
 		{
-			if (str[index1] == leet[index2] ||
-			 str[index1] - 32 == leet[index2])
-				str[index1] = index2 + '0';
+		if (s[i] == letters[j])
+		{
+		s[i] = numbers[j];
+		}
 		}
 	}
-	return (str);
+	return (s);
 }
